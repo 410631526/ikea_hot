@@ -1,16 +1,14 @@
 body {
-  background-color: #f8f9fa; /* 淡灰色背景 */
+  background: linear-gradient(to right, #e3f2fd, #f8f9fa); /* 漸層背景 */
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 1200px; /* 限制內容最大寬度 */
+  margin: 0 auto; /* 水平居中 */
+  padding: 20px;
 }
 
 header {
@@ -32,36 +30,40 @@ p {
   border: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
+  border-radius: 10px;
 }
 
 .card:hover {
-  transform: scale(1.05); /* 放大效果 */
+  transform: scale(1.03); /* 懸浮放大 */
 }
 
 .card-img-top {
-  height: 200px;
-  object-fit: cover;
-  border-radius: 5px 5px 0 0;
-}
-
-.btn-primary {
-  background-color: #0058a3;
-  border-color: #0058a3;
-}
-
-.btn-primary:hover {
-  background-color: #004080;
-  border-color: #004080;
+  height: 180px; /* 限制圖片高度 */
+  width: 100%; /* 確保圖片填滿卡片 */
+  object-fit: cover; /* 裁切圖片 */
+  border-radius: 10px 10px 0 0;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px; /* 卡片之間的間距 */
+  justify-content: space-between; /* 卡片之間均勻間距 */
+  gap: 20px; /* 卡片間距 */
 }
 
 .card {
-  max-width: 300px; /* 限制卡片寬度 */
-  width: 100%; /* 保持卡片響應式 */
+  flex: 1 1 calc(25% - 20px); /* 每行最多四個卡片，間距20px */
+  max-width: calc(25% - 20px);
+  min-width: 260px; /* 確保小螢幕下卡片不太小 */
+}
+
+.btn-primary {
+  background-color: #0058a3;
+  border-color: #0058a3;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #004080;
+  border-color: #004080;
 }

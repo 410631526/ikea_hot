@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css"; // 用於自定義樣式
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const products = [
   {
@@ -102,33 +103,33 @@ const products = [
 
 const App = () => {
   return (
-    <div className="container mt-5">
-      <h1>IKEA 熱門商品</h1>
+    <div className="container">
+      <header>
+        <h1>IKEA 熱門商品</h1>
+        <p>挑選適合你的家居用品，讓生活更美好！</p>
+      </header>
       <div className="row">
         {products.map((product) => (
-          <div className="col-md-3 mb-4" key={product.id}>
-            <div className="card">
-              {/* 圖片包裹在 <a> 標籤內，實現點擊跳轉 */}
-              <a href={product.url} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={product.image}
-                  className="card-img-top"
-                  alt={product.title}
-                />
+          <div className="card" key={product.id}>
+            <a href={product.url} target="_blank" rel="noopener noreferrer">
+              <img
+                src={product.image}
+                className="card-img-top"
+                alt={product.title}
+              />
+            </a>
+            <div className="card-body">
+              <h5 className="card-title">{product.title}</h5>
+              <p className="card-text text-muted">{product.description}</p>
+              <p className="card-text text-primary fw-bold">{product.price}</p>
+              <a
+                href={product.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary w-100"
+              >
+                前往購買
               </a>
-              <div className="card-body">
-                <h5 className="card-title">{product.title}</h5>
-                <p className="card-text">{product.description}</p>
-                <p className="card-text text-primary fw-bold">{product.price}</p>
-                <a
-                  href={product.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary w-100"
-                >
-                  前往購買
-                </a>
-              </div>
             </div>
           </div>
         ))}

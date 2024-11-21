@@ -1,10 +1,31 @@
 body {
   background-color: #f8f9fa; /* 淡灰色背景 */
   font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 h1 {
   color: #0058a3; /* IKEA 藍色 */
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1rem;
+  color: #6c757d; /* 淡灰文字 */
 }
 
 .card {
@@ -20,6 +41,7 @@ h1 {
 .card-img-top {
   height: 200px;
   object-fit: cover;
+  border-radius: 5px 5px 0 0;
 }
 
 .btn-primary {
@@ -30,4 +52,16 @@ h1 {
 .btn-primary:hover {
   background-color: #004080;
   border-color: #004080;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* 卡片之間的間距 */
+}
+
+.card {
+  max-width: 300px; /* 限制卡片寬度 */
+  width: 100%; /* 保持卡片響應式 */
 }

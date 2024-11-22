@@ -1,7 +1,6 @@
 # IKEA 熱門商品展示網站
 
-## GitHub Pages
-https://410631526.github.io/ikea_hot/
+## GitHub Pages:https://410631526.github.io/ikea_hot/
 ---
 
 ## 簡介
